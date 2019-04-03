@@ -1,0 +1,46 @@
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
+import java.util.*;
+import java.io.*;
+public class frameButton
+{
+public static void main(String[] args)
+{
+Scanner s=new Scanner (System.in);
+String a,b;
+a=s.next();
+b=s.next();
+JFrame frame=new JFrame("Calculaor");
+JTextField tf=new JTextField();
+tf.setBounds(50,50,30,30);
+JTextField tf2=new JTextField();
+tf2.setBounds(150,50,30,30);
+JTextField tf3=new JTextField();
+tf3.setBounds(250,50,30,30);
+JButton bu=new JButton("+");
+JButton bu2=new JButton("=");
+bu2.setBounds(200,55,20,20);
+bu.setBounds(100,55,20,20);
+bu.addActionListener(new ActionListener()
+{
+public void actionPerformed(ActionEvent e){
+tf.setText(a);
+tf2.setText(b);
+int n1,n2;
+n1=Integer.parseInt(a);
+n2=Integer.parseInt(b);
+System.out.println((n1+n2));
+tf3.setText(Integer.toString(n1+n2));
+}
+});
+frame.add(tf);
+frame.add(tf2);
+frame.add(tf3);
+frame.add(bu);
+frame.add(bu2);
+frame.setSize(400,400);
+frame.setLayout(null);
+frame.setVisible(true);
+}
+}
